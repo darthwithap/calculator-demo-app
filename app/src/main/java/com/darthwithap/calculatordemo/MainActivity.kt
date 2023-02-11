@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.darthwithap.calculatordemo.databinding.ActivityMainBinding
 import com.darthwithap.calculatordemo.ui.ICalculatorUi
 import com.darthwithap.calculatordemo.ui.ViewEvent
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,8 +16,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
 
     lateinit var logic: ICalculatorUi.Logic
 
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
         TODO("Implement handmade dependency injection class for logic")
@@ -25,26 +29,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
     }
 
     private fun bindUserInterface() {
-        button_equals.setOnClickListener(this)
-        button_decimal.setOnClickListener(this)
-        button_delete.setOnClickListener(this)
-        button_delete.setOnLongClickListener(this)
+        binding.buttonEquals.setOnClickListener(this)
+        binding.buttonDecimal.setOnClickListener(this)
+        binding.buttonDelete.setOnClickListener(this)
+        binding.buttonDelete.setOnLongClickListener(this)
 
-        button_one.setOnClickListener(this)
-        button_two.setOnClickListener(this)
-        button_three.setOnClickListener(this)
-        button_four.setOnClickListener(this)
-        button_five.setOnClickListener(this)
-        button_six.setOnClickListener(this)
-        button_seven.setOnClickListener(this)
-        button_eight.setOnClickListener(this)
-        button_nine.setOnClickListener(this)
-        button_zero.setOnClickListener(this)
+        binding.buttonOne.setOnClickListener(this)
+        binding.buttonTwo.setOnClickListener(this)
+        binding.buttonThree.setOnClickListener(this)
+        binding.buttonFour.setOnClickListener(this)
+        binding.buttonFive.setOnClickListener(this)
+        binding.buttonSix.setOnClickListener(this)
+        binding.buttonSix.setOnClickListener(this)
+        binding.buttonEight.setOnClickListener(this)
+        binding.buttonNine.setOnClickListener(this)
+        binding.buttonEight.setOnClickListener(this)
 
-        button_add.setOnClickListener(this)
-        button_subtract.setOnClickListener(this)
-        button_multiply.setOnClickListener(this)
-        button_divide.setOnClickListener(this)
+        binding.buttonAdd.setOnClickListener(this)
+        binding.buttonSubtract.setOnClickListener(this)
+        binding.buttonMultiply.setOnClickListener(this)
+        binding.buttonDivide.setOnClickListener(this)
 
     }
 
